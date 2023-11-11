@@ -5,7 +5,26 @@
         "type": "info",
         "label": "The default username: user and the default password is: bitnami. You can change these in the admin panel of the application. If you get an http mixed content error, change the HTTP_SERVER on config.php file to https"
       }
-    ]
+    ],
+    "form": [{
+      "name": "OPENCART_USERNAME",
+      "label": "What OpenCart do you want to use?",
+      "initialValue": "admin",
+      "type": "text"
+  },
+  {
+      "name": "OPENCART_PASSWORD",
+      "label": "What OpenCart admin password do you want?",
+      "initialValue": "password",
+      "type": "password"
+  },
+  {
+      "name": "OPENCART_EMAIL",
+      "label": "What OpenCart admin email do you want?",
+      "initialValue": "admin@OpenCart.com",
+      "type": "text"
+  }
+]
    },
     "minVersion": "0.8.0",
     "services": {
@@ -26,6 +45,9 @@
           "OPENCART_DATABASE_PORT_NUMBER=3306",
           "OPENCART_DATABASE_USER=bn_opencart",
           "OPENCART_DATABASE_NAME=bitnami_opencart",
+          "OPENCART_USERNAME={Context.OPENCART_USERNAME}",
+          "OPENCART_PASSWORD={Context.OPENCART_PASSWORD}",
+          "OPENCART_EMAIL={Context.OPENCART_EMAIL}",
           "OPENCART_HOST={Hostnames.{StaticServiceName}.{StaticServiceName}.host}"
         ],
         "networks": {

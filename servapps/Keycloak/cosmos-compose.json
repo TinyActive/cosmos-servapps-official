@@ -37,7 +37,7 @@
         "cosmos-persistent-env": "KEYCLOAK_DATABASE_NAME, KEYCLOAK_DATABASE_USER, KEYCLOAK_DATABASE_PASSWORD",
         "cosmos-force-network-secured": "true",
         "cosmos-auto-update": "true",
-        "cosmos-icon": "https://comos.manhtuong.net/servapps/Odoo/icon.png"
+        "cosmos-icon": "https://comos.manhtuong.net/servapps/OdKeycloakoo/icon.png"
       },
       "networks": {
         "{ServiceName}-postgres": {}

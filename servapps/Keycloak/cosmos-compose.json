@@ -28,7 +28,10 @@
         "KEYCLOAK_DATABASE_PORT=5432",
         "KEYCLOAK_DATABASE_USER=keycloak",
         "KEYCLOAK_DATABASE_NAME=keycloak",
-        "KEYCLOAK_DATABASE_PASSWORD={Passwords.0}"
+        "KEYCLOAK_DATABASE_PASSWORD={Passwords.0}",
+        "KC_PROXY=edge",
+        "KC_PROXY_ADDRESS_FORWARDING=true",
+        "KC_HTTP_ENABLED=true"
       ],
       "labels": {
         "cosmos-persistent-env": "KEYCLOAK_DATABASE_NAME, KEYCLOAK_DATABASE_USER, KEYCLOAK_DATABASE_PASSWORD",

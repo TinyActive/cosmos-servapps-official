@@ -15,8 +15,8 @@
             {
                 "name": "JENKINS_EMAIL",
                 "label": "What is your email jenkins login?",
-                "initialValue": "tinyactive",
-                "type": "password"
+                "initialValue": "cosmo@tinyactive.net",
+                "type": "text"
             }
         ]
     },

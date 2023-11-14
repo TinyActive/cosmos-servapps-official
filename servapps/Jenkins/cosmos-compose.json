@@ -4,7 +4,7 @@
                 "name": "JENKINS_USERNAME",
                 "label": "What is your Username jenkins login?",
                 "initialValue": "tinyactive",
-                "type": "password"
+                "type": "text"
             },
             {
                 "name": "JENKINS_PASSWORD",

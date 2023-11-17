@@ -1,0 +1,67 @@
+{
+    "cosmos-installer": {
+        "form": [{
+                "name": "SEMAPHORE_ADMIN_EMAIL",
+                "label": "What is your semaphore email login?",
+                "initialValue": "semaphore@manhtuong.net",
+                "type": "text"
+            },
+            {
+                "name": "SEMAPHORE_ADMIN_NAME",
+                "label": "What semaphore username does it use?",
+                "initialValue": "fd4y3Sb4VnUbegrD",
+                "type": "password"
+            },
+            {
+                "name": "SEMAPHORE_ADMIN_PASSWORD",
+                "label": "What semaphore password does it use?",
+                "initialValue": "fd4y3Sb4VnUbegrD",
+                "type": "password"
+            }
+        ]
+    },
+    "minVersion": "0.9.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "semaphoreui/semaphore",
+            "container_name": "{ServiceName}",
+            "restart": "unless-stopped",
+            "environment": [
+                "SEMAPHORE_DB_DIALECT=bolt",
+                "SEMAPHORE_ADMIN_PASSWORD={Context.SEMAPHORE_ADMIN_PASSWORD}",
+                "SEMAPHORE_ADMIN_NAME={Context.SEMAPHORE_ADMIN_NAME}",
+                "SEMAPHORE_ADMIN_EMAIL={Context.SEMAPHORE_ADMIN_EMAIL}",
+                "SEMAPHORE_ADMIN={Context.SEMAPHORE_ADMIN_NAME}"
+            ],
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://comos.manhtuong.net/servapps/Ansible-semaphore/icon.png"
+            },
+            "volumes": [{
+                    "source": "{ServiceName}-data-home",
+                    "target": "/etc/semaphore",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-data-lib",
+                    "target": "/var/lib/semaphore",
+                    "type": "volume"
+                }
+            ],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:3000",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }]
+        }
+    }
+}

@@ -1,9 +1,0 @@
-{
-    "name": "Bookstack",
-    "longDescription": "<p>Bookstack is a free and open source Wiki designed for creating beautiful documentation. Featuring a simple, but powerful WYSIWYG editor it allows for teams to create detailed and useful documentation with ease. Powered by SQL and including a Markdown editor for those who prefer it, BookStack is geared towards making documentation more of a pleasure than a chore</p><br>The default username is <b>admin@admin.com</b> with the password of <b>password</b><p>",
-    "description": "BookStack is an opinionated wiki system that provides a pleasant and simple out-of-the-box experience.",
-    "tags": ["Wiki", "self-hosted"],
-    "repository": "https://github.com/linuxserver/docker-bookstack/",
-    "image": "https://hub.docker.com/r/linuxserver/bookstack",
-    "supported_architectures": ["amd64", "arm64"]
-}
